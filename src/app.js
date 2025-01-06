@@ -1,18 +1,21 @@
 const express = require('express');
+const cors = require('cors');
 const taskRoutes = require('./routes/taskRoutes');
 
 const app = express();
 
-// Middlewares
-app.use(express.json()); // Para interpretar JSON no body das requisições
+// Middleware para CORS
+app.use(cors());
+
+// Middleware para interpretar JSON
+app.use(express.json());
 
 // Rotas
-app.use('/tasks', taskRoutes); // Base URL para as rotas de tarefas
+app.use('/tasks', taskRoutes);
 
-// Rota padrão para a raiz
+// Rota padrão
 app.get('/', (req, res) => {
     res.send('Bem-vindo à API To-Do List! Acesse /tasks para começar.');
 });
 
-// Exporta o app
 module.exports = app;
