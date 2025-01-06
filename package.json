@@ -12,7 +12,13 @@
     "type": "git",
     "url": "git+https://github.com/RenanMorais70/backend-app.git"
   },
-  "keywords": ["API", "Node.js", "Express", "SQLite", "CRUD"],
+  "keywords": [
+    "API",
+    "Node.js",
+    "Express",
+    "SQLite",
+    "CRUD"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {

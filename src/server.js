@@ -7,8 +7,9 @@ const startServer = async () => {
     await sequelize.sync(); // Sincroniza o banco com o modelo
     console.log('Database connected and models synced!');
 
-    app.listen(3000, () => {
-      console.log('Server running on http://localhost:3000');
+    const port = process.env.PORT || 3001; // Define a porta, priorizando a variável de ambiente
+    app.listen(port, '0.0.0.0', () => {
+      console.log(`Server running on http://0.0.0.0:${port}`);
     });
   } catch (error) {
     console.error('Error starting server:', error);
